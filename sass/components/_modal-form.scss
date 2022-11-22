@@ -1,0 +1,130 @@
+.modal__form-field {
+	margin-bottom: 10px;
+}
+
+.modal__label,
+.modal__textarea-label {
+	display: block;
+
+	margin-bottom: 4px;
+}
+
+.modal__label-text {
+	display: block;
+
+	@include font(null, 12px, 1.17, 0.01em);
+}
+
+.modal__input-wrap {
+	position: relative;
+}
+
+.modal__input,
+.modal__textarea {
+	width: 100%;
+
+	background-color: transparent;
+
+	border-radius: 4px;
+	outline: transparent;
+	border: 1px solid var(--modal-input-border-color);
+
+	@extend %transition-border-color;
+}
+
+.modal__input {
+	height: 40px;
+	padding-right: 12px;
+	padding-left: 42px;
+
+	&:focus {
+		border-color: var(--accent-color);
+	}
+}
+
+.modal__textarea-field {
+	margin-bottom: 20px;
+}
+
+.modal__textarea {
+	height: 120px;
+	padding: 12px 16px;
+
+	resize: none;
+
+	&:focus {
+		border-color: var(--accent-color);
+	}
+	&::placeholder {
+		@include font(null, 12px, 1.17, 0.01em);
+
+		color: var(--modal-textarea-color);
+	}
+}
+
+.modal__input-icon {
+	position: absolute;
+	top: 50%;
+	left: 12px;
+	transform: translateY(-50%);
+
+	margin-right: 12px;
+
+	@extend %transition-fill;
+
+	.modal__input:focus + & {
+		fill: var(--accent-color);
+	}
+}
+
+.modal__checkbox-field {
+	margin-bottom: 30px;
+}
+
+.modal__label-check {
+	display: flex;
+	align-items: center;
+	margin-left: 12px;
+
+	transition-property: border-color;
+	@extend %transition;
+}
+
+.modal__icon-checkbox {
+	@extend %flex-centring;
+	width: 16px;
+	height: 15px;
+	margin-right: 8px;
+
+	fill: transparent;
+
+	background-color: transparent;
+	border: 2px solid var(--modal-checkbox-color);
+	border-radius: 2px;
+
+	.modal__input-check:checked + .modal__label-check & {
+		fill: var(--additional-text-color);
+		background-color: var(--accent-color);
+		border: transparent;
+	}
+	.modal__input-check:focus + .modal__label-check & {
+		border-color: var(--accent-color);
+	}
+}
+
+.modal__check-text {
+	display: flex;
+	margin-right: 5px;
+
+	@include font(null, null, 1.71, null);
+}
+
+.modal__check-link {
+	color: var(--accent-color);
+}
+
+.modal__submit {
+	margin: 0 auto;
+
+	text-align: center;
+}

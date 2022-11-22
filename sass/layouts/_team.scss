@@ -1,0 +1,44 @@
+.team {
+	background-color: var(--secondary-background-color);
+}
+
+.team__people-list {
+	display: flex;
+	gap: 30px;
+}
+
+.people-list__item {
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+		0px 2px 1px rgba(0, 0, 0, 0.2);
+	border-radius: 0px 0px 4px 4px;
+	width: 270px;
+
+	background-color: var(--primary-background-color);
+}
+
+.people-list__wrap {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.people-list__name,
+.people-list__position {
+	@include font(null, 16px, 1.19, null);
+	text-align: center;
+}
+
+.people-list__name {
+	margin-bottom: 10px;
+
+	color: var(--title-text-color);
+
+	font-weight: 500;
+}
+
+.people-list__position {
+	margin-bottom: 16px;
+}
+
+.team__soc {
+	justify-content: center;
+}

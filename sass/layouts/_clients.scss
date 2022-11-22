@@ -1,0 +1,31 @@
+.clients__logo-list {
+	display: flex;
+	gap: 30px;
+}
+
+.logo-list__item {
+	width: 170px;
+	height: 92px;
+}
+
+.logo-list__link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	border: 1px solid var(--clients-border-color);
+	border-radius: 4px;
+
+	fill: var(--icons-color);
+
+	transition-property: border-color, fill;
+	@extend %transition;
+
+	&:hover,
+	&:focus {
+		border-color: var(--accent-color);
+
+		fill: var(--accent-color);
+	}
+}

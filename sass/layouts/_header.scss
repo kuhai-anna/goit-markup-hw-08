@@ -1,0 +1,111 @@
+.header__container {
+	display: flex;
+	align-items: center;
+}
+
+.navigation {
+	display: flex;
+	align-items: center;
+}
+
+/* -------------MAIN NAVIGATION------------- */
+.menu {
+	display: flex;
+	margin-left: 93px;
+}
+
+.menu__item:not(:last-child) {
+	margin-right: 50px;
+}
+
+.menu__link {
+	position: relative;
+	display: block;
+	padding-top: 32px;
+	padding-bottom: 32px;
+
+	color: var(--title-text-color);
+
+	@include font(500, null, 1.14, 0.02em);
+
+	transition-property: color;
+	@extend %transition;
+
+	&:hover,
+	&:focus {
+		color: var(--accent-color);
+	}
+	&::after {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+
+		display: inline-block;
+		content: '';
+		width: 100%;
+		height: 4px;
+		background-color: var(--accent-color);
+		border-radius: 2px;
+
+		transform: scaleX(0);
+		transition-property: transform;
+		@extend %transition;
+	}
+	&:hover:after,
+	&:focus:after {
+		transform: scaleX(1);
+	}
+}
+
+.current {
+	color: var(--accent-color);
+	&::after {
+		position: absolute;
+		bottom: 0;
+
+		display: inline-block;
+		content: '';
+		width: 100%;
+		height: 4px;
+		background-color: var(--accent-color);
+		border-radius: 2px;
+
+		transform: scaleX(1);
+	}
+}
+
+/* -----------------CONNECT----------------- */
+.header__connect {
+	display: flex;
+	margin-right: 0;
+	margin-left: auto;
+}
+
+.connect__item:not(:last-child) {
+	margin-right: 50px;
+}
+
+.connect__contacts {
+	display: flex;
+	align-items: center;
+
+	color: var(--primary-text-color);
+
+	@include font(500, null, 1.14, 0.02em);
+
+	transition-property: color;
+	@extend %transition;
+
+	&:hover,
+	&:focus {
+		color: var(--accent-color);
+	}
+}
+
+.connect__icon {
+	fill: currentColor;
+}
+
+.connect__icon--prepend {
+	margin-right: 10px;
+}

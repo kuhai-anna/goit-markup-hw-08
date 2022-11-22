@@ -1,0 +1,13 @@
+body {
+	color: var(--primary-text-color);
+
+	font-family: 'Roboto', sans-serif;
+	@include font(null, 14px, null, 0.03em);
+
+	background-color: var(--primary-background-color);
+}
+
+.section {
+	padding-top: 94px;
+	padding-bottom: 94px;
+}
