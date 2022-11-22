@@ -1,11 +1,12 @@
 .clients__logo-list {
 	display: flex;
+	flex-wrap: wrap;
 	gap: 30px;
 }
 
 .logo-list__item {
-	width: 170px;
 	height: 92px;
+	flex-basis: calc((100% - 30px) / 2);
 }
 
 .logo-list__link {
@@ -27,5 +28,20 @@
 		border-color: var(--accent-color);
 
 		fill: var(--accent-color);
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.logo-list__item {
+		flex-basis: calc((100% - 60px) / 3);
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.clients__logo-list {
+		flex-wrap: nowrap;
+	}
+	.logo-list__item {
+		flex-basis: calc((100% - 150px) / 6);
 	}
 }

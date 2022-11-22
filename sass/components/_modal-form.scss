@@ -29,7 +29,8 @@
 	outline: transparent;
 	border: 1px solid var(--modal-input-border-color);
 
-	@extend %transition-border-color;
+	transition-property: border-color;
+	@extend %transition;
 }
 
 .modal__input {
@@ -70,7 +71,8 @@
 
 	margin-right: 12px;
 
-	@extend %transition-fill;
+	transition-property: fill;
+	@extend %transition;
 
 	.modal__input:focus + & {
 		fill: var(--accent-color);
@@ -91,7 +93,9 @@
 }
 
 .modal__icon-checkbox {
-	@extend %flex-centring;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 16px;
 	height: 15px;
 	margin-right: 8px;

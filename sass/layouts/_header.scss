@@ -4,8 +4,7 @@
 }
 
 .navigation {
-	display: flex;
-	align-items: center;
+	display: none;
 }
 
 /* -------------MAIN NAVIGATION------------- */
@@ -76,9 +75,7 @@
 
 /* -----------------CONNECT----------------- */
 .header__connect {
-	display: flex;
-	margin-right: 0;
-	margin-left: auto;
+	display: none;
 }
 
 .connect__item:not(:last-child) {
@@ -108,4 +105,37 @@
 
 .connect__icon--prepend {
 	margin-right: 10px;
+}
+
+@media screen and (max-width: 767px) {
+	.header__container {
+		padding-top: 16px;
+		padding-bottom: 16px;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+	.navigation {
+		display: flex;
+		align-items: center;
+	}
+
+	.header__connect {
+		display: block;
+		margin-right: 0;
+		margin-left: auto;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.navigation {
+		display: flex;
+		align-items: center;
+	}
+
+	.header__connect {
+		display: flex;
+		margin-right: 0;
+		margin-left: auto;
+	}
 }

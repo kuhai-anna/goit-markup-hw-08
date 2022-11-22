@@ -1,13 +1,16 @@
-.features__icon-list {
-	display: flex;
-	gap: 30px;
+// .features__icon-list {
+// }
+
+.icon-list__item {
+	width: 100%;
+	margin-bottom: 30px;
 }
 
 .icon-list__wrap {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 270px;
+	// width: 100%;
 	height: 120px;
 
 	border-radius: 4px;
@@ -29,4 +32,31 @@
 
 .icon-list__text {
 	@include font(null, null, 1.71, null);
+}
+
+@media screen and (max-width: 767px) {
+	.icon-list__item {
+		margin-bottom: 30px;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.features__icon-list {
+		display: flex;
+		gap: 30px;
+	}
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+	.features__icon-list {
+		flex-wrap: wrap;
+	}
+	.icon-list__item {
+		flex-basis: calc((100% - 30px) / 2);
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.icon-list__item {
+		flex-basis: calc((100% - 90px) / 4);
+	}
 }

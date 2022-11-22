@@ -13,7 +13,8 @@
 		0px 2px 1px rgba(0, 0, 0, 0.2);
 	border-radius: 4px;
 
-	@extend %transition-transform;
+	transition-property: transform;
+	@extend %transition;
 
 	.backdrop.is-hidden & {
 		transform: translate(-50%, -50%) scale(0.9);

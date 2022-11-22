@@ -1,6 +1,6 @@
 .logo {
 	font-family: 'Raleway', sans-serif;
-	@include font(700, 26px, 1.19, null);
+	@include font(700, 24px, 1.17, null);
 }
 
 .logo--dark {
@@ -14,3 +14,9 @@
 .logo__accent {
 	color: var(--accent-color);
 }
+
+// @media screen and (min-width: 1200px) {
+// 	.logo {
+// 		@include font(700, 26px, 1.19, null);
+// 	}
+// }
