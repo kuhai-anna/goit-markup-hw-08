@@ -1,7 +1,4 @@
 .submit {
-	width: 200px;
-	height: 50px;
-
 	@include font(700, null, 1.88, 0.06em);
 	color: var(--additional-text-color);
 

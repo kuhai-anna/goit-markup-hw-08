@@ -3,6 +3,12 @@
 
 	color: var(--title-text-color);
 
-	@include font(null, 36px, 1.17, null);
+	@include font(null, 28px, 1.18, null);
 	text-align: center;
+}
+
+@media screen and (min-width: 1200px) {
+	.section__title {
+		@include font(null, 36px, 1.17, null);
+	}
 }

@@ -15,8 +15,8 @@
 	color: var(--accent-color);
 }
 
-// @media screen and (min-width: 1200px) {
-// 	.logo {
-// 		@include font(700, 26px, 1.19, null);
-// 	}
-// }
+@media screen and (min-width: 1200px) {
+	.logo {
+		@include font(700, 26px, 1.19, null);
+	}
+}

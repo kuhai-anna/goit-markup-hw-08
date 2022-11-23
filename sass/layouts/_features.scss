@@ -1,16 +1,11 @@
-// .features__icon-list {
-// }
-
 .icon-list__item {
 	width: 100%;
-	margin-bottom: 30px;
 }
 
 .icon-list__wrap {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	// width: 100%;
 	height: 120px;
 
 	border-radius: 4px;
@@ -24,10 +19,10 @@
 .icon-list__title {
 	margin-bottom: 10px;
 
-	color: var(--title-text-color);
-
 	@include font(null, 14px, 1.14, null);
 	text-transform: uppercase;
+
+	color: var(--title-text-color);
 }
 
 .icon-list__text {
@@ -37,6 +32,9 @@
 @media screen and (max-width: 767px) {
 	.icon-list__item {
 		margin-bottom: 30px;
+	}
+	.icon-list__title {
+		text-align: center;
 	}
 }
 

@@ -10,7 +10,6 @@
 /* -------------MAIN NAVIGATION------------- */
 .menu {
 	display: flex;
-	margin-left: 93px;
 }
 
 .menu__item:not(:last-child) {
@@ -78,14 +77,7 @@
 	display: none;
 }
 
-.connect__item:not(:last-child) {
-	margin-right: 50px;
-}
-
 .connect__contacts {
-	display: flex;
-	align-items: center;
-
 	color: var(--primary-text-color);
 
 	@include font(500, null, 1.14, 0.02em);
@@ -119,11 +111,16 @@
 		display: flex;
 		align-items: center;
 	}
-
+	.menu {
+		margin-left: 87px;
+	}
 	.header__connect {
 		display: block;
 		margin-right: 0;
 		margin-left: auto;
+	}
+	.connect__item:not(:last-child) {
+		margin-bottom: 10px;
 	}
 }
 
@@ -132,10 +129,19 @@
 		display: flex;
 		align-items: center;
 	}
-
+	.menu {
+		margin-left: 92px;
+	}
 	.header__connect {
 		display: flex;
 		margin-right: 0;
 		margin-left: auto;
+	}
+	.connect__item:not(:last-child) {
+		margin-right: 50px;
+	}
+	.connect__contacts {
+		display: flex;
+		align-items: center;
 	}
 }
