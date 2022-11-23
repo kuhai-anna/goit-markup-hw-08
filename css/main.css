@@ -74,13 +74,13 @@ body {
   padding-top: 60px;
   padding-bottom: 60px;
 }
-@media screen and (min-width: 480px) {
+
+@media screen and (min-width: 1200px) {
   .section {
     padding-top: 94px;
     padding-bottom: 94px;
   }
 }
-
 .visually-hidden {
   position: absolute;
   white-space: nowrap;
@@ -119,6 +119,8 @@ body {
 }
 .button {
   display: block;
+  width: 200px;
+  height: 50px;
   font-family: inherit;
   font-size: 16px;
   cursor: pointer;
@@ -133,11 +135,17 @@ body {
 .section__title {
   margin-bottom: 50px;
   color: var(--title-text-color);
-  font-size: 36px;
-  line-height: 1.17;
+  font-size: 28px;
+  line-height: 1.18;
   text-align: center;
 }
 
+@media screen and (min-width: 1200px) {
+  .section__title {
+    font-size: 36px;
+    line-height: 1.17;
+  }
+}
 .logo {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
@@ -157,6 +165,13 @@ body {
   color: var(--accent-color);
 }
 
+@media screen and (min-width: 1200px) {
+  .logo {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+  }
+}
 .soc {
   display: flex;
   justify-content: center;
@@ -197,8 +212,6 @@ body {
 }
 
 .submit {
-  width: 200px;
-  height: 50px;
   font-weight: 700;
   line-height: 1.88;
   letter-spacing: 0.06em;
@@ -419,7 +432,6 @@ body {
 /* -------------MAIN NAVIGATION------------- */
 .menu {
   display: flex;
-  margin-left: 93px;
 }
 
 .menu__item:not(:last-child) {
@@ -477,13 +489,7 @@ body {
   display: none;
 }
 
-.connect__item:not(:last-child) {
-  margin-right: 50px;
-}
-
 .connect__contacts {
-  display: flex;
-  align-items: center;
   color: var(--primary-text-color);
   font-weight: 500;
   line-height: 1.14;
@@ -513,10 +519,16 @@ body {
     display: flex;
     align-items: center;
   }
+  .menu {
+    margin-left: 87px;
+  }
   .header__connect {
     display: block;
     margin-right: 0;
     margin-left: auto;
+  }
+  .connect__item:not(:last-child) {
+    margin-bottom: 10px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -524,10 +536,20 @@ body {
     display: flex;
     align-items: center;
   }
+  .menu {
+    margin-left: 92px;
+  }
   .header__connect {
     display: flex;
     margin-right: 0;
     margin-left: auto;
+  }
+  .connect__item:not(:last-child) {
+    margin-right: 50px;
+  }
+  .connect__contacts {
+    display: flex;
+    align-items: center;
   }
 }
 .hero {
@@ -562,11 +584,10 @@ body {
 }
 
 .hero__btn {
-  height: 50px;
   margin: 0 auto;
   color: var(--additional-text-color);
   font-weight: 700;
-  line-height: 1.87;
+  line-height: 1.88;
   letter-spacing: 0.06em;
   background-color: var(--accent-color);
 }
@@ -579,28 +600,23 @@ body {
 }
 @media screen and (min-width: 768px) {
   .hero__title {
-    font-weight: 900;
-    font-size: 44px;
-    line-height: 1.36;
-    letter-spacing: 0.06em;
-  }
-}
-@media screen and (max-width: 1199px) {
-  .hero__btn {
-    width: 200px;
+    max-width: 360px;
   }
 }
 @media screen and (min-width: 1200px) {
   .hero__title {
     max-width: 700px;
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1.36;
+    letter-spacing: 0.06em;
   }
   .hero__btn {
-    padding: 10px 32px;
+    width: 216px;
   }
 }
 .icon-list__item {
   width: 100%;
-  margin-bottom: 30px;
 }
 
 .icon-list__wrap {
@@ -618,10 +634,10 @@ body {
 
 .icon-list__title {
   margin-bottom: 10px;
-  color: var(--title-text-color);
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
+  color: var(--title-text-color);
 }
 
 .icon-list__text {
@@ -631,6 +647,9 @@ body {
 @media screen and (max-width: 767px) {
   .icon-list__item {
     margin-bottom: 30px;
+  }
+  .icon-list__title {
+    text-align: center;
   }
 }
 @media screen and (min-width: 768px) {
@@ -697,10 +716,6 @@ body {
   background-color: var(--primary-background-color);
 }
 
-.people-list__item:not(:last-child) {
-  margin-bottom: 30px;
-}
-
 .people-list__wrap {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -723,17 +738,28 @@ body {
   margin-bottom: 16px;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1199px) {
+@media screen and (max-width: 767px) {
+  .people-list__item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 768px) {
   .team__people-list {
     display: flex;
-    flex-wrap: wrap;
     gap: 30px;
+  }
+  .people-list__item {
+    flex-basis: calc((100% - 30px) / 2);
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .team__people-list {
+    flex-wrap: wrap;
   }
 }
 @media screen and (min-width: 1200px) {
-  .team__people-list {
-    display: flex;
-    gap: 30px;
+  .people-list__item {
+    flex-basis: calc((100% - 90px) / 4);
   }
 }
 .clients__logo-list {
@@ -743,8 +769,8 @@ body {
 }
 
 .logo-list__item {
-  height: 92px;
   flex-basis: calc((100% - 30px) / 2);
+  height: 92px;
 }
 
 .logo-list__link {
@@ -785,21 +811,23 @@ body {
 .footer__logo {
   display: block;
   margin-bottom: 20px;
-  text-align: center;
 }
 
 .address__item:not(:last-child) {
   margin-bottom: 9px;
 }
 
+.address__link,
+.adress__contacts {
+  line-height: 1.71;
+}
+
 .address__link {
   color: var(--additional-text-color);
-  line-height: 1.71;
 }
 
 .adress__contacts {
   color: var(--contacs-color);
-  line-height: 1.71;
   transition-property: color;
 }
 .adress__contacts:hover, .adress__contacts:focus {
@@ -842,12 +870,6 @@ body {
 .social-media {
     margin-bottom: 60px;
   }
-  .footer__input {
-    margin-bottom: 20px;
-  }
-  .footer__submit {
-    margin: 0 auto;
-  }
 }
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .footer__container {
@@ -858,14 +880,24 @@ body {
   .adress-container {
     margin-right: 165px;
   }
+  .form-container {
+    margin-top: 60px;
+  }
   .footer__input {
     width: 450px;
   }
 }
 @media screen and (max-width: 1199px) {
-  .address__list,
+  .footer__logo,
+.address__list,
 .footer__titles {
     text-align: center;
+  }
+  .footer__input {
+    margin-bottom: 20px;
+  }
+  .footer__submit {
+    margin: 0 auto;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -880,7 +912,7 @@ body {
     gap: 12px;
   }
   .footer__input {
-    width: 356px;
+    width: 358px;
   }
 }
 .portfolio-header {
