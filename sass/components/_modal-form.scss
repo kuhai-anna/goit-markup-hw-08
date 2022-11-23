@@ -57,7 +57,7 @@
 		border-color: var(--accent-color);
 	}
 	&::placeholder {
-		@include font(null, 12px, 1.17, 0.01em);
+		@include font(null, null, 1.14, 0.01em);
 
 		color: var(--modal-textarea-color);
 	}
@@ -86,16 +86,12 @@
 .modal__label-check {
 	display: flex;
 	align-items: center;
-	margin-left: 12px;
 
 	transition-property: border-color;
 	@extend %transition;
 }
 
 .modal__icon-checkbox {
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	width: 16px;
 	height: 15px;
 	margin-right: 8px;
@@ -116,11 +112,13 @@
 	}
 }
 
-.modal__check-text {
-	display: flex;
-	margin-right: 5px;
+.modal__check-text,
+.modal__check-link {
+	@include font(null, 12px, 1.17, null);
+}
 
-	@include font(null, null, 1.71, null);
+.modal__check-text {
+	margin-right: 5px;
 }
 
 .modal__check-link {
@@ -131,4 +129,19 @@
 	margin: 0 auto;
 
 	text-align: center;
+}
+
+@media screen and (min-width: 1200px) {
+	.modal__textarea {
+		&::placeholder {
+			@include font(null, 12px, 1.17, 0.01em);
+		}
+	}
+	.modal__label-check {
+		margin-left: 12px;
+	}
+	.modal__check-text,
+	.modal__check-link {
+		@include font(null, 14px, 1.71, null);
+	}
 }
