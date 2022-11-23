@@ -251,8 +251,8 @@ body {
   left: 50%;
   padding: 40px;
   transform: translate(-50%, -50%) scale(1);
-  min-width: 528px;
-  min-height: 581px;
+  width: 450px;
+  height: 609px;
   background-color: var(--primary-background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
@@ -290,6 +290,12 @@ body {
   color: var(--title-text-color);
 }
 
+@media screen and (min-width: 1200px) {
+  .modal {
+    min-width: 528px;
+    min-height: 581px;
+  }
+}
 .modal__form-field {
   margin-bottom: 10px;
 }
@@ -343,20 +349,17 @@ body {
   border-color: var(--accent-color);
 }
 .modal__textarea::-moz-placeholder {
-  font-size: 12px;
-  line-height: 1.17;
+  line-height: 1.14;
   letter-spacing: 0.01em;
   color: var(--modal-textarea-color);
 }
 .modal__textarea:-ms-input-placeholder {
-  font-size: 12px;
-  line-height: 1.17;
+  line-height: 1.14;
   letter-spacing: 0.01em;
   color: var(--modal-textarea-color);
 }
 .modal__textarea::placeholder {
-  font-size: 12px;
-  line-height: 1.17;
+  line-height: 1.14;
   letter-spacing: 0.01em;
   color: var(--modal-textarea-color);
 }
@@ -380,14 +383,10 @@ body {
 .modal__label-check {
   display: flex;
   align-items: center;
-  margin-left: 12px;
   transition-property: border-color;
 }
 
 .modal__icon-checkbox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 16px;
   height: 15px;
   margin-right: 8px;
@@ -405,10 +404,14 @@ body {
   border-color: var(--accent-color);
 }
 
+.modal__check-text,
+.modal__check-link {
+  font-size: 12px;
+  line-height: 1.17;
+}
+
 .modal__check-text {
-  display: flex;
   margin-right: 5px;
-  line-height: 1.71;
 }
 
 .modal__check-link {
@@ -420,6 +423,31 @@ body {
   text-align: center;
 }
 
+@media screen and (min-width: 1200px) {
+  .modal__textarea::-moz-placeholder {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+  }
+  .modal__textarea:-ms-input-placeholder {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+  }
+  .modal__textarea::placeholder {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+  }
+  .modal__label-check {
+    margin-left: 12px;
+  }
+  .modal__check-text,
+.modal__check-link {
+    font-size: 14px;
+    line-height: 1.71;
+  }
+}
 .header__container {
   display: flex;
   align-items: center;
