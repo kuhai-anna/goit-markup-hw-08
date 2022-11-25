@@ -2,6 +2,12 @@
 	background-color: var(--secondary-background-color);
 }
 
+.team__people-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px;
+}
+
 .people-list__item {
 	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
 		0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -10,6 +16,10 @@
 
 	background-color: var(--primary-background-color);
 }
+
+// .people-list__item:not(:last-child) {
+// 	margin-bottom: 30px;
+// }
 
 .people-list__wrap {
 	padding-top: 30px;
@@ -34,27 +44,24 @@
 	margin-bottom: 16px;
 }
 
-@media screen and (max-width: 767px) {
-	.people-list__item:not(:last-child) {
-		margin-bottom: 30px;
-	}
-}
-
 @media screen and (min-width: 768px) {
-	.team__people-list {
-		display: flex;
-		gap: 30px;
-	}
+	// .team__people-list {
+	// 	display: flex;
+	// 	gap: 30px;
+	// }
 	.people-list__item {
 		flex-basis: calc((100% - 30px) / 2);
 	}
+	// .people-list__item:not(:last-child) {
+	// 	margin-bottom: 0;
+	// }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1199px) {
-	.team__people-list {
-		flex-wrap: wrap;
-	}
-}
+// @media screen and (min-width: 768px) and (max-width: 1199px) {
+// 	.team__people-list {
+// 		flex-wrap: wrap;
+// 	}
+// }
 
 @media screen and (min-width: 1200px) {
 	.people-list__item {
