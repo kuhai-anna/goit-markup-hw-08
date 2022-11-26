@@ -5,7 +5,7 @@
 }
 
 .logo-list__item {
-	flex-basis: calc((100% - 30px) / 2);
+	@include calc(2);
 	height: 92px;
 }
 
@@ -33,15 +33,12 @@
 
 @media screen and (min-width: 768px) {
 	.logo-list__item {
-		flex-basis: calc((100% - 60px) / 3);
+		@include calc(3);
 	}
 }
 
 @media screen and (min-width: 1200px) {
-	.clients__logo-list {
-		flex-wrap: nowrap;
-	}
 	.logo-list__item {
-		flex-basis: calc((100% - 150px) / 6);
+		@include calc(6);
 	}
 }

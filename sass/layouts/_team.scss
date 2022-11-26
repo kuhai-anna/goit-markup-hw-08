@@ -17,10 +17,6 @@
 	background-color: var(--primary-background-color);
 }
 
-// .people-list__item:not(:last-child) {
-// 	margin-bottom: 30px;
-// }
-
 .people-list__wrap {
 	padding-top: 30px;
 	padding-bottom: 30px;
@@ -45,26 +41,13 @@
 }
 
 @media screen and (min-width: 768px) {
-	// .team__people-list {
-	// 	display: flex;
-	// 	gap: 30px;
-	// }
 	.people-list__item {
-		flex-basis: calc((100% - 30px) / 2);
+		@include calc(2);
 	}
-	// .people-list__item:not(:last-child) {
-	// 	margin-bottom: 0;
-	// }
 }
-
-// @media screen and (min-width: 768px) and (max-width: 1199px) {
-// 	.team__people-list {
-// 		flex-wrap: wrap;
-// 	}
-// }
 
 @media screen and (min-width: 1200px) {
 	.people-list__item {
-		flex-basis: calc((100% - 90px) / 4);
+		@include calc(4);
 	}
 }

@@ -4,3 +4,7 @@
 	line-height: $height;
 	letter-spacing: $spacing;
 }
+
+@mixin calc($count) {
+	flex-basis: calc((100% - 30px * ($count - 1)) / $count);
+}
