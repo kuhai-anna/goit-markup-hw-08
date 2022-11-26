@@ -57,7 +57,7 @@ address {
 }
 
 .card-list__overlay, .card-list__link, .filter-buttons__btn, .adress__contacts, .logo-list__link, .connect__contacts, .menu__link::after, .menu__link, .modal__label-check, .modal__input-icon, .modal__input,
-.modal__textarea, .modal__button-close, .modal, .backdrop, .soc__link--dark-bgd, .soc__link--light-bgd, .button {
+.modal__textarea, .modal__button-close, .button-close, .modal, .backdrop, .soc__link--dark-bgd, .soc__link--light-bgd, .button {
   transition-duration: 250ms;
   transition-timing-function: var(--timing-function);
 }
@@ -99,14 +99,10 @@ body {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
+  max-width: 480px;
+  margin: 0 auto;
 }
 
-@media screen and (min-width: 480px) {
-  .container {
-    max-width: 480px;
-    margin: 0 auto;
-  }
-}
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .container {
     max-width: 768px;
@@ -260,6 +256,20 @@ body {
 }
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.9);
+}
+
+.button-close {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  transition-property: fill;
+}
+.button-close:hover, .button-close:focus {
+  fill: var(--accent-color);
 }
 
 .modal__button-close {
@@ -451,13 +461,31 @@ body {
 .header__container {
   display: flex;
   align-items: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
+.button-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  transition-property: fill;
+}
+.button-close:hover, .button-close:focus {
+  fill: var(--accent-color);
+}
+
+/* -------------MAIN NAVIGATION------------- */
 .navigation {
   display: none;
 }
 
-/* -------------MAIN NAVIGATION------------- */
 .menu {
   display: flex;
 }
@@ -536,10 +564,13 @@ body {
   margin-right: 10px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 768px) {
   .header__container {
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .mob-menu-wrap {
+    display: none;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1199px) {
@@ -643,6 +674,12 @@ body {
     width: 216px;
   }
 }
+.features__icon-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
 .icon-list__item {
   width: 100%;
 }
@@ -673,23 +710,11 @@ body {
 }
 
 @media screen and (max-width: 767px) {
-  .icon-list__item {
-    margin-bottom: 30px;
-  }
   .icon-list__title {
     text-align: center;
   }
 }
-@media screen and (min-width: 768px) {
-  .features__icon-list {
-    display: flex;
-    gap: 30px;
-  }
-}
 @media screen and (min-width: 768px) and (max-width: 1199px) {
-  .features__icon-list {
-    flex-wrap: wrap;
-  }
   .icon-list__item {
     flex-basis: calc((100% - 30px) / 2);
   }
@@ -737,6 +762,12 @@ body {
   background-color: var(--secondary-background-color);
 }
 
+.team__people-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
 .people-list__item {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
@@ -766,23 +797,9 @@ body {
   margin-bottom: 16px;
 }
 
-@media screen and (max-width: 767px) {
-  .people-list__item:not(:last-child) {
-    margin-bottom: 30px;
-  }
-}
 @media screen and (min-width: 768px) {
-  .team__people-list {
-    display: flex;
-    gap: 30px;
-  }
   .people-list__item {
     flex-basis: calc((100% - 30px) / 2);
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1199px) {
-  .team__people-list {
-    flex-wrap: wrap;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -823,9 +840,6 @@ body {
   }
 }
 @media screen and (min-width: 1200px) {
-  .clients__logo-list {
-    flex-wrap: nowrap;
-  }
   .logo-list__item {
     flex-basis: calc((100% - 150px) / 6);
   }
@@ -834,6 +848,11 @@ body {
   padding-top: 60px;
   padding-bottom: 60px;
   background-color: var(--accent-background-color);
+}
+
+.adress-container,
+.social-media {
+  margin-bottom: 60px;
 }
 
 .footer__logo {
@@ -893,10 +912,10 @@ body {
   align-items: center;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 768px) {
   .adress-container,
 .social-media {
-    margin-bottom: 60px;
+    margin-bottom: 0;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1199px) {
