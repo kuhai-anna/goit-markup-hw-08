@@ -4,6 +4,11 @@
 	background-color: var(--accent-background-color);
 }
 
+.adress-container,
+.social-media {
+	margin-bottom: 60px;
+}
+
 .footer__logo {
 	display: block;
 	margin-bottom: 20px;
@@ -71,10 +76,10 @@
 	align-items: center;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 768px) {
 	.adress-container,
 	.social-media {
-		margin-bottom: 60px;
+		margin-bottom: 0;
 	}
 }
 
