@@ -1,33 +1,113 @@
 .header__container {
 	display: flex;
 	align-items: center;
-	padding-top: 16px;
-	padding-bottom: 16px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
-.button-close {
-	// position: absolute;
-	// top: 10px;
-	// right: 15px;
+.open-menu {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin-left: auto;
-
 	width: 40px;
 	height: 40px;
 
 	background-color: transparent;
-	border-radius: 50%;
+	border: none;
 	cursor: pointer;
+}
 
-	transition-property: fill;
-	@extend %transition;
+.mob-menu {
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	overflow: auto;
+	z-index: 1;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	padding-top: 48px;
+	padding-right: 15px;
+	padding-bottom: 48px;
+	padding-left: 40px;
+	// padding-left: 25px;
 
-	&:hover,
-	&:focus {
-		fill: var(--accent-color);
+	background-color: var(--primary-background-color);
+
+	// > .container {
+	// 	display: flex;
+	// 	flex-direction: column;
+	// 	justify-content: space-between;
+	// 	overflow: auto;
+	// 	height: 100%;
+	// }
+}
+
+.mob-menu__button-close {
+	top: 10px;
+	right: 15px;
+
+	width: 40px;
+	height: 40px;
+
+	border: none;
+}
+
+.mob-menu-list__item:not(:last-child),
+.mob-connect__item:not(:last-child) {
+	margin-bottom: 32px;
+}
+
+.mob-menu-list__link {
+	color: var(--title-text-color);
+
+	@include font(500, 40px, 1.18, 0.02em);
+}
+
+.mob-current {
+	color: var(--accent-color);
+}
+
+.mob-connect {
+	margin-bottom: 64px;
+}
+
+.mob-connect__tel {
+	color: var(--accent-color);
+
+	@include font(500, 34px, 1.18, 0.02em);
+}
+
+.mob-connect__mail {
+	color: var(--primary-text-color);
+
+	@include font(500, 24px, 1.17, 0.02em);
+}
+
+.header-soc {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.header-soc__item:not(:last-child) {
+	display: flex;
+	&::after {
+		content: '';
+		width: 1px;
+		height: 22px;
+		margin-left: 10px;
+
+		background-color: var(--mob-menu-line-color);
 	}
+}
+
+.header-soc__link {
+	color: var(--accent-color);
+
+	@include font(500, 18px, 1.22, 0.02em);
 }
 
 /* -------------MAIN NAVIGATION------------- */
