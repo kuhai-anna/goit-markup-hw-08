@@ -18,3 +18,22 @@
 		background-color: var(--accent-button-color);
 	}
 }
+
+.button-close {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: auto;
+
+	background-color: transparent;
+	cursor: pointer;
+
+	transition-property: fill;
+	@extend %transition;
+
+	&:hover,
+	&:focus {
+		fill: var(--accent-color);
+	}
+}
