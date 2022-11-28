@@ -16,6 +16,7 @@
   --clients-border-color: #afb1b8;
   --media-background-color: rgba(255, 255, 255, 0.1);
   --footer-input-border-color: rgba(255, 255, 255, 0.3);
+  --mob-menu-line-color: rgba(33, 33, 33, 0.2);
   --modal-background-color: rgba(0, 0, 0, 0.2);
   --modal-btn-border-color: rgba(0, 0, 0, 0.1);
   --modal-input-border-color: rgba(33, 33, 33, 0.2);
@@ -57,7 +58,7 @@ address {
 }
 
 .card-list__overlay, .card-list__link, .filter-buttons__btn, .adress__contacts, .logo-list__link, .connect__contacts, .menu__link::after, .menu__link, .modal__label-check, .modal__input-icon, .modal__input,
-.modal__textarea, .modal__button-close, .button-close, .modal, .backdrop, .soc__link--dark-bgd, .soc__link--light-bgd, .button {
+.modal__textarea, .modal, .backdrop, .soc__link--dark-bgd, .soc__link--light-bgd, .button-close, .button {
   transition-duration: 250ms;
   transition-timing-function: var(--timing-function);
 }
@@ -126,6 +127,20 @@ body {
 }
 .button:hover, .button:focus {
   background-color: var(--accent-button-color);
+}
+
+.button-close {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  background-color: transparent;
+  cursor: pointer;
+  transition-property: fill;
+}
+.button-close:hover, .button-close:focus {
+  fill: var(--accent-color);
 }
 
 .section__title {
@@ -258,37 +273,13 @@ body {
   transform: translate(-50%, -50%) scale(0.9);
 }
 
-.button-close {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-  border-radius: 50%;
-  cursor: pointer;
-  transition-property: fill;
-}
-.button-close:hover, .button-close:focus {
-  fill: var(--accent-color);
-}
-
 .modal__button-close {
-  position: absolute;
   top: 8px;
   right: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 30px;
   height: 30px;
-  background-color: transparent;
   border: 1px solid var(--modal-btn-border-color);
   border-radius: 50%;
-  cursor: pointer;
-  transition-property: fill;
-}
-.modal__button-close:hover, .modal__button-close:focus {
-  fill: var(--accent-color);
 }
 
 .modal__title {
@@ -461,11 +452,11 @@ body {
 .header__container {
   display: flex;
   align-items: center;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-.button-close {
+.open-menu {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -473,12 +464,95 @@ body {
   width: 40px;
   height: 40px;
   background-color: transparent;
-  border-radius: 50%;
+  border: none;
   cursor: pointer;
-  transition-property: fill;
 }
-.button-close:hover, .button-close:focus {
-  fill: var(--accent-color);
+
+.mob-menu {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: auto;
+  z-index: 1;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 48px;
+  padding-right: 15px;
+  padding-bottom: 48px;
+  padding-left: 40px;
+  background-color: var(--primary-background-color);
+}
+
+.mob-menu__button-close {
+  top: 10px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  border: none;
+}
+
+.mob-menu-list__item:not(:last-child),
+.mob-connect__item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.mob-menu-list__link {
+  color: var(--title-text-color);
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+}
+
+.mob-current {
+  color: var(--accent-color);
+}
+
+.mob-connect {
+  margin-bottom: 64px;
+}
+
+.mob-connect__tel {
+  color: var(--accent-color);
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+}
+
+.mob-connect__mail {
+  color: var(--primary-text-color);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+}
+
+.header-soc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.header-soc__item:not(:last-child) {
+  display: flex;
+}
+.header-soc__item:not(:last-child)::after {
+  content: "";
+  width: 1px;
+  height: 22px;
+  margin-left: 10px;
+  background-color: var(--mob-menu-line-color);
+}
+
+.header-soc__link {
+  color: var(--accent-color);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
 }
 
 /* -------------MAIN NAVIGATION------------- */
