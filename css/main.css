@@ -1162,7 +1162,6 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 24px;
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -1179,6 +1178,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  padding: 24px;
   width: 100%;
   font-size: 18px;
   line-height: 1.56;
@@ -1205,11 +1205,6 @@ body {
   line-height: 1.88;
 }
 
-@media screen and (min-width: 480px) {
-  .card-list__overlay-text {
-    max-width: 402px;
-  }
-}
 @media screen and (max-width: 767px) {
   .filter-wrap {
     max-width: 326px;
@@ -1222,15 +1217,9 @@ body {
   .card-list__item {
     flex-basis: calc((100% - 30px) / 2);
   }
-  .card-list__overlay-text {
-    max-width: 306px;
-  }
 }
 @media screen and (min-width: 1200px) {
   .card-list__item {
     flex-basis: calc((100% - 60px) / 3);
-  }
-  .card-list__overlay-text {
-    max-width: 322px;
   }
 }/*# sourceMappingURL=main.css.map */
