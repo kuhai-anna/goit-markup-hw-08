@@ -1,25 +1,28 @@
 .hero {
-	padding-top: 118px;
-	padding-bottom: 118px;
-
-	padding-top: 200px;
-	padding-bottom: 200px;
-
 	background-color: var(--accent-background-color);
 
 	text-align: center;
 }
 
+.hero__container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 400px;
+}
+
 .hero-overlay {
-	max-width: 1600px;
-	height: 600px;
+	max-width: 480px;
+	height: 400px;
 	margin-right: auto;
 	margin-left: auto;
-	background-image: linear-gradient(var(--overlay-hero-color), var(--overlay-hero-color)),
-		url(../images/bgd-image.jpg);
+	background-image: var(--hero-gradient), url(../images/main/hero-mobile-320.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
+	@include retina {
+		background-image: var(--hero-gradient), url(../images/main/hero-mobile-640.jpg);
+	}
 }
 
 .hero__title {
@@ -43,14 +46,29 @@
 	background-color: var(--accent-color);
 }
 
-@media screen and (min-width: 480px) {
-	.hero {
-		padding-top: 200px;
-		padding-bottom: 200px;
+@media screen and (min-width: 768px) {
+	.hero-overlay {
+		max-width: 768px;
+		height: 400px;
+		background-image: var(--hero-gradient), url(../images/main/hero-tablet-320.jpg);
+		@include retina {
+			background-image: var(--hero-gradient), url(../images/main/hero-mobile-640.jpg);
+		}
 	}
 }
 
 @media screen and (min-width: 1200px) {
+	.hero__container {
+		height: 600px;
+	}
+	.hero-overlay {
+		max-width: 1600px;
+		height: 600px;
+		background-image: var(--hero-gradient), url(../images/main/hero-desktop-320.jpg);
+		@include retina {
+			background-image: var(--hero-gradient), url(../images/main/hero-mobile-640.jpg);
+		}
+	}
 	.hero__title {
 		max-width: 700px;
 		@include font(900, 44px, 1.36, 0.06em);
