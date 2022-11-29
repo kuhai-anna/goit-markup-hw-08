@@ -18,6 +18,12 @@ address {
 	font-style: normal;
 }
 
+button {
+	display: block;
+	font-family: inherit;
+	cursor: pointer;
+}
+
 .list {
 	list-style: none;
 	padding-left: 0;
