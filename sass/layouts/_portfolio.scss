@@ -75,9 +75,6 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	padding: 24px;
-	// padding-right: 24px;
-	// padding-left: 24px;
 
 	width: 100%;
 	height: 100%;
@@ -100,7 +97,7 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-
+	padding: 24px;
 	width: 100%;
 
 	@include font(null, 18px, 1.56, null);
@@ -127,12 +124,6 @@
 	@include font(null, 16px, 1.88, null);
 }
 
-@media screen and (min-width: 480px) {
-	.card-list__overlay-text {
-		max-width: 402px;
-	}
-}
-
 @media screen and (max-width: 767px) {
 	.filter-wrap {
 		max-width: 326px;
@@ -146,16 +137,10 @@
 	.card-list__item {
 		@include calc(2);
 	}
-	.card-list__overlay-text {
-		max-width: 306px;
-	}
 }
 
 @media screen and (min-width: 1200px) {
 	.card-list__item {
 		@include calc(3);
-	}
-	.card-list__overlay-text {
-		max-width: 322px;
 	}
 }
