@@ -9,9 +9,10 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-left: auto;
-	width: 40px;
-	height: 40px;
+	margin: 0;
+	padding: 0;
+	min-width: 40px;
+	min-height: 40px;
 
 	background-color: transparent;
 	border: none;
@@ -24,25 +25,24 @@
 	flex-direction: column;
 	justify-content: space-between;
 	overflow: auto;
-	z-index: 1;
 	top: 0;
 	width: 100vw;
 	height: 100vh;
 	padding-top: 48px;
-	padding-right: 15px;
+	padding-right: 40px;
 	padding-bottom: 48px;
 	padding-left: 40px;
-	// padding-left: 25px;
+	z-index: 10;
 
 	background-color: var(--primary-background-color);
 
-	// > .container {
-	// 	display: flex;
-	// 	flex-direction: column;
-	// 	justify-content: space-between;
-	// 	overflow: auto;
-	// 	height: 100%;
-	// }
+	transform: translateX(100%);
+	transition-property: transform;
+	@extend %transition;
+
+	&.is-open {
+		transform: translateX(0);
+	}
 }
 
 .mob-menu__button-close {
@@ -76,8 +76,8 @@
 
 .mob-connect__tel {
 	color: var(--accent-color);
-
-	@include font(500, 34px, 1.18, 0.02em);
+	// розмір шрифту менший, ніж за дизайном
+	@include font(500, 27px, 1.18, 0.02em);
 }
 
 .mob-connect__mail {
@@ -206,14 +206,26 @@
 	margin-right: 10px;
 }
 
+@media screen and (min-width: 480px) {
+	.mob-connect__tel {
+		@include font(500, 34px, 1.18, 0.02em);
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.header__container {
+		justify-content: space-between;
+	}
+}
+
 @media screen and (min-width: 768px) {
 	.header__container {
 		padding-top: 0;
 		padding-bottom: 0;
 	}
-	// .open-menu {
-	// 	display: none;
-	// }
+	.open-menu {
+		display: none;
+	}
 	.mob-menu-wrap {
 		display: none;
 	}

@@ -1,18 +1,22 @@
 .filter-buttons {
 	display: flex;
-	justify-content: center;
+	flex-wrap: wrap;
 	gap: 8px;
 	margin-bottom: 50px;
 }
 
 .filter-buttons__btn {
 	padding: 6px 22px;
-	background-color: var(--secondary-background-color);
 
 	color: var(--title-text-color);
 
-	@include font(500, null, 1.63, 00.03em);
+	font-family: inherit;
+	@include font(500, 16px, 1.63, 00.03em);
 	text-align: center;
+
+	background-color: var(--secondary-background-color);
+	border: none;
+	border-radius: 4px;
 
 	transition-property: background-color, color, box-shadow;
 	@extend %transition;
@@ -30,21 +34,22 @@
 .card-list {
 	display: flex;
 	flex-wrap: wrap;
+	gap: 30px;
 }
 
 .card-list__item {
-	margin-right: 30px;
-	margin-bottom: 30px;
-	width: calc((100% - 60px) / 3);
+	// margin-right: 30px;
+	// margin-bottom: 30px;
+	width: 100%;
 
 	background-color: var(--primary-background-color);
 
-	&:nth-child(3n) {
-		margin-right: 0px;
-	}
-	&:nth-last-child(-n + 3) {
-		margin-bottom: 0;
-	}
+	// &:nth-child(3n) {
+	// 	margin-right: 0px;
+	// }
+	// &:nth-last-child(-n + 3) {
+	// 	margin-bottom: 0;
+	// }
 }
 
 .card-list__link {
@@ -70,6 +75,8 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+	padding-right: 24px;
+	padding-left: 24px;
 
 	width: 100%;
 	height: 100%;
@@ -92,7 +99,7 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 
-	width: 322px;
+	width: 100%;
 
 	@include font(null, 18px, 1.56, null);
 	color: var(--additional-text-color);
@@ -116,4 +123,37 @@
 	color: var(--primary-text-color);
 
 	@include font(null, 16px, 1.88, null);
+}
+
+@media screen and (min-width: 480px) {
+	.card-list__overlay-text {
+		width: 402px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.filter-wrap {
+		max-width: 326px;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.filter-buttons {
+		justify-content: center;
+	}
+	.card-list__item {
+		@include calc(2);
+	}
+	// .card-list__overlay-text {
+	// 	max-width: 306px;
+	// }
+}
+
+@media screen and (min-width: 1200px) {
+	.card-list__item {
+		@include calc(3);
+	}
+	// .card-list__overlay-text {
+	// 	max-width: 322px;
+	// }
 }

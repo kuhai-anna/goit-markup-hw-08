@@ -25,6 +25,8 @@
 .hero__title {
 	margin: 0 auto;
 	margin-bottom: 30px;
+	max-width: 360px;
+
 	color: var(--additional-text-color);
 
 	@include font(900, 26px, 1.62, 0.06em);
@@ -45,12 +47,6 @@
 	.hero {
 		padding-top: 200px;
 		padding-bottom: 200px;
-	}
-}
-
-@media screen and (min-width: 768px) {
-	.hero__title {
-		max-width: 360px;
 	}
 }
 
