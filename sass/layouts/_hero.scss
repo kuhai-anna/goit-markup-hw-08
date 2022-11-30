@@ -5,14 +5,13 @@
 }
 
 .hero__container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	padding-top: 118px;
+	padding-bottom: 118px;
 	height: 400px;
 }
 
 .hero-overlay {
-	max-width: 480px;
+	max-width: 1600px;
 	height: 400px;
 	margin-right: auto;
 	margin-left: auto;
@@ -48,7 +47,6 @@
 
 @media screen and (min-width: 768px) {
 	.hero-overlay {
-		max-width: 768px;
 		height: 400px;
 		background-image: var(--hero-gradient), url(../images/main/hero-tablet-320.jpg);
 		@include retina {
@@ -59,10 +57,11 @@
 
 @media screen and (min-width: 1200px) {
 	.hero__container {
+		padding-top: 200px;
+		padding-bottom: 200px;
 		height: 600px;
 	}
 	.hero-overlay {
-		max-width: 1600px;
 		height: 600px;
 		background-image: var(--hero-gradient), url(../images/main/hero-desktop-320.jpg);
 		@include retina {

@@ -2,11 +2,12 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: 8px;
+	row-gap: 15px;
 	margin-bottom: 50px;
 }
 
 .filter-buttons__btn {
-	padding: 6px 22px;
+	padding: 6px 25px;
 
 	color: var(--title-text-color);
 
@@ -82,7 +83,7 @@
 
 	background-color: var(--portfolio-overlay-color);
 
-	transform: translateY(100%);
+	transform: translateY(101%);
 	transition-property: transform;
 	@extend %transition;
 
@@ -100,7 +101,7 @@
 	padding: 24px;
 	width: 100%;
 
-	@include font(null, 18px, 1.56, null);
+	@include font(null, 15px, 1.56, null);
 	color: var(--additional-text-color);
 }
 
@@ -124,9 +125,9 @@
 	@include font(null, 16px, 1.88, null);
 }
 
-@media screen and (max-width: 767px) {
-	.filter-wrap {
-		max-width: 326px;
+@media screen and (min-width: 380px) {
+	.card-list__overlay-text {
+		@include font(null, 18px, 1.56, null);
 	}
 }
 

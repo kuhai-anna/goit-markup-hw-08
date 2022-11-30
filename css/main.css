@@ -731,14 +731,13 @@ body {
 }
 
 .hero__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding-top: 118px;
+  padding-bottom: 118px;
   height: 400px;
 }
 
 .hero-overlay {
-  max-width: 480px;
+  max-width: 1600px;
   height: 400px;
   margin-right: auto;
   margin-left: auto;
@@ -776,7 +775,6 @@ body {
 
 @media screen and (min-width: 768px) {
   .hero-overlay {
-    max-width: 768px;
     height: 400px;
     background-image: var(--hero-gradient), url(../images/main/hero-tablet-320.jpg);
   }
@@ -788,10 +786,11 @@ body {
 }
 @media screen and (min-width: 1200px) {
   .hero__container {
+    padding-top: 200px;
+    padding-bottom: 200px;
     height: 600px;
   }
   .hero-overlay {
-    max-width: 1600px;
     height: 600px;
     background-image: var(--hero-gradient), url(../images/main/hero-desktop-320.jpg);
   }
@@ -1064,6 +1063,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: baseline;
   }
   .form-container {
     margin-top: 60px;
@@ -1108,11 +1108,12 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  row-gap: 15px;
   margin-bottom: 50px;
 }
 
 .filter-buttons__btn {
-  padding: 6px 22px;
+  padding: 6px 25px;
   color: var(--title-text-color);
   font-family: inherit;
   font-weight: 500;
@@ -1163,7 +1164,7 @@ body {
   height: 100%;
   overflow: auto;
   background-color: var(--portfolio-overlay-color);
-  transform: translateY(100%);
+  transform: translateY(101%);
   transition-property: transform;
 }
 .card-list__link:hover .card-list__overlay, .card-list__link:focus .card-list__overlay {
@@ -1177,7 +1178,7 @@ body {
   transform: translate(-50%, -50%);
   padding: 24px;
   width: 100%;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.56;
   color: var(--additional-text-color);
 }
@@ -1202,9 +1203,10 @@ body {
   line-height: 1.88;
 }
 
-@media screen and (max-width: 767px) {
-  .filter-wrap {
-    max-width: 326px;
+@media screen and (min-width: 380px) {
+  .card-list__overlay-text {
+    font-size: 18px;
+    line-height: 1.56;
   }
 }
 @media screen and (min-width: 768px) {
