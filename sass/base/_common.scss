@@ -7,6 +7,10 @@ body {
 	background-color: var(--primary-background-color);
 }
 
+.modal-open {
+	overflow: hidden;
+}
+
 .section {
 	padding-top: 60px;
 	padding-bottom: 60px;
