@@ -77,6 +77,10 @@ body {
   background-color: var(--primary-background-color);
 }
 
+.modal-open {
+  overflow: hidden;
+}
+
 .section {
   padding-top: 60px;
   padding-bottom: 60px;
@@ -247,8 +251,8 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: var(--modal-background-color);
   opacity: 1;
   visibility: visible;
@@ -365,11 +369,6 @@ body {
   letter-spacing: 0.01em;
   color: var(--modal-textarea-color);
 }
-.modal__textarea:-ms-input-placeholder {
-  line-height: 1.14;
-  letter-spacing: 0.01em;
-  color: var(--modal-textarea-color);
-}
 .modal__textarea::placeholder {
   line-height: 1.14;
   letter-spacing: 0.01em;
@@ -441,11 +440,6 @@ body {
     line-height: 1.17;
     letter-spacing: 0.01em;
   }
-  .modal__textarea:-ms-input-placeholder {
-    font-size: 12px;
-    line-height: 1.17;
-    letter-spacing: 0.01em;
-  }
   .modal__textarea::placeholder {
     font-size: 12px;
     line-height: 1.17;
@@ -455,7 +449,7 @@ body {
     margin-left: 12px;
   }
   .modal__check-text,
-.modal__check-link {
+  .modal__check-link {
     font-size: 14px;
     line-height: 1.71;
   }
@@ -1053,7 +1047,7 @@ body {
 
 @media screen and (min-width: 768px) {
   .adress-container,
-.social-media {
+  .social-media {
     margin-bottom: 0;
   }
 }
@@ -1073,8 +1067,8 @@ body {
 }
 @media screen and (max-width: 1199px) {
   .footer__logo,
-.address__list,
-.footer__titles {
+  .address__list,
+  .footer__titles {
     text-align: center;
   }
   .footer__input {
